@@ -19,6 +19,12 @@ import Blockchain from './pages/Blockchain';
 import CrisisManagement from './pages/CrisisManagement';
 import SmartTransport from './pages/SmartTransport';
 import EnergyManagement from './pages/EnergyManagement';
+import AIInnovation from './pages/AIInnovation';
+import AdvancedIoT from './pages/AdvancedIoT';
+import ARVRBlockchain from './pages/ARVRBlockchain';
+import AnalyticsCitizen from './pages/AnalyticsCitizen';
+import TransportGreen from './pages/TransportGreen';
+import HealthSystems from './pages/HealthSystems';
 import { notifications } from './data/mockData';
 
 // آیتم‌های منوی کناری
@@ -43,6 +49,12 @@ const menuItems = [
   { id: 'crisis', label: 'مدیریت بحران', icon: 'fa-triangle-exclamation', section: 'فاز ۴' },
   { id: 'smart-transport', label: 'حمل‌ونقل هوشمند', icon: 'fa-bus', section: 'فاز ۴' },
   { id: 'energy', label: 'مدیریت انرژی', icon: 'fa-bolt', section: 'فاز ۴' },
+  { id: 'ai-innovation', label: 'هوش مصنوعی پیشرفته', icon: 'fa-brain', section: 'نوآوری' },
+  { id: 'advanced-iot', label: 'سنسورهای IoT', icon: 'fa-microchip', section: 'نوآوری' },
+  { id: 'arvr-blockchain', label: 'AR/VR و بلاکچین', icon: 'fa-vr-cardboard', section: 'نوآوری' },
+  { id: 'analytics-citizen', label: 'تحلیل و شهروندی', icon: 'fa-chart-line', section: 'نوآوری' },
+  { id: 'transport-green', label: 'حمل‌ونقل و محیط زیست', icon: 'fa-leaf', section: 'نوآوری' },
+  { id: 'health', label: 'سلامت شهری', icon: 'fa-heart-pulse', section: 'نوآوری' },
 ];
 
 export default function App() {
@@ -101,6 +113,12 @@ export default function App() {
       case 'crisis': return <CrisisManagement />;
       case 'smart-transport': return <SmartTransport />;
       case 'energy': return <EnergyManagement />;
+      case 'ai-innovation': return <AIInnovation />;
+      case 'advanced-iot': return <AdvancedIoT />;
+      case 'arvr-blockchain': return <ARVRBlockchain />;
+      case 'analytics-citizen': return <AnalyticsCitizen />;
+      case 'transport-green': return <TransportGreen />;
+      case 'health': return <HealthSystems />;
       default: return <Dashboard />;
     }
   };
