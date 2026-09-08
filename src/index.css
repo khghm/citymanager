@@ -1,1 +1,62 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #0e4d6e;
+  --color-primary-light: #1a6e9e;
+  --color-primary-dark: #083a54;
+  --color-gold: #d4a843;
+  --color-gold-light: #e8c468;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+}
+
+/* استایل‌های سفارشی */
+.sidebar-item {
+  transition: all 0.2s ease;
+}
+.sidebar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(-4px);
+}
+
+.sidebar-active {
+  background-color: rgba(212, 168, 67, 0.2);
+  border-right: 3px solid #d4a843;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.modal-overlay {
+  animation: fadeInOverlay 0.2s ease;
+}
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #475569;
+}
