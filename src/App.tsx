@@ -25,6 +25,7 @@ import ARVRBlockchain from './pages/ARVRBlockchain';
 import AnalyticsCitizen from './pages/AnalyticsCitizen';
 import TransportGreen from './pages/TransportGreen';
 import HealthSystems from './pages/HealthSystems';
+import OperationalFeatures from './pages/OperationalFeatures';
 import { notifications } from './data/mockData';
 
 // آیتم‌های منوی کناری
@@ -55,6 +56,7 @@ const menuItems = [
   { id: 'analytics-citizen', label: 'تحلیل و شهروندی', icon: 'fa-chart-line', section: 'نوآوری' },
   { id: 'transport-green', label: 'حمل‌ونقل و محیط زیست', icon: 'fa-leaf', section: 'نوآوری' },
   { id: 'health', label: 'سلامت شهری', icon: 'fa-heart-pulse', section: 'نوآوری' },
+  { id: 'operational', label: 'سیستم‌های عملیاتی', icon: 'fa-rocket', section: 'نوآوری' },
 ];
 
 export default function App() {
@@ -119,6 +121,7 @@ export default function App() {
       case 'analytics-citizen': return <AnalyticsCitizen />;
       case 'transport-green': return <TransportGreen />;
       case 'health': return <HealthSystems />;
+      case 'operational': return <OperationalFeatures />;
       default: return <Dashboard />;
     }
   };
