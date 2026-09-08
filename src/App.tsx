@@ -27,6 +27,7 @@ import TransportGreen from './pages/TransportGreen';
 import HealthSystems from './pages/HealthSystems';
 import OperationalFeatures from './pages/OperationalFeatures';
 import DeputiesManagement from './pages/DeputiesManagement';
+import SpecializedDeputies from './pages/SpecializedDeputies';
 import { notifications } from './data/mockData';
 
 // آیتم‌های منوی کناری
@@ -44,6 +45,7 @@ const menuItems = [
   { id: 'reports', label: 'گزارش‌ها', icon: 'fa-file-lines', section: 'اصلی' },
   { id: 'settings', label: 'تنظیمات', icon: 'fa-gear', section: 'اصلی' },
   { id: 'deputies', label: 'مدیریت معاونت‌ها', icon: 'fa-users-gear', section: 'اصلی' },
+  { id: 'specialized-deputies', label: 'معاونت‌های تخصصی', icon: 'fa-sitemap', section: 'اصلی' },
   { id: 'traffic-prediction', label: 'پیش‌بینی ترافیک', icon: 'fa-brain', section: 'فاز ۱' },
   { id: 'iot', label: 'داشبورد IoT', icon: 'fa-microchip', section: 'فاز ۱' },
   { id: 'ai-assistant', label: 'دستیار هوشمند', icon: 'fa-robot', section: 'فاز ۲' },
@@ -125,6 +127,7 @@ export default function App() {
       case 'health': return <HealthSystems />;
       case 'operational': return <OperationalFeatures />;
       case 'deputies': return <DeputiesManagement />;
+      case 'specialized-deputies': return <SpecializedDeputies />;
       default: return <Dashboard />;
     }
   };
