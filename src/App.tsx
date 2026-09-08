@@ -11,22 +11,38 @@ import Water from './pages/Water';
 import Permits from './pages/Permits';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
+import TrafficPrediction from './pages/TrafficPrediction';
+import IoTDashboard from './pages/IoTDashboard';
+import AIAssistant from './pages/AIAssistant';
+import DigitalTwin from './pages/DigitalTwin';
+import Blockchain from './pages/Blockchain';
+import CrisisManagement from './pages/CrisisManagement';
+import SmartTransport from './pages/SmartTransport';
+import EnergyManagement from './pages/EnergyManagement';
 import { notifications } from './data/mockData';
 
 // آیتم‌های منوی کناری
 const menuItems = [
-  { id: 'dashboard', label: 'پیشخوان', icon: 'fa-gauge-high' },
-  { id: 'projects', label: 'پروژه‌ها', icon: 'fa-hard-hat' },
-  { id: 'budget', label: 'بودجه', icon: 'fa-coins' },
-  { id: 'personnel', label: 'پرسنل', icon: 'fa-users' },
-  { id: 'services', label: 'خدمات شهری', icon: 'fa-city' },
-  { id: 'complaints', label: 'شکایات', icon: 'fa-comment-dots' },
-  { id: 'traffic', label: 'ترافیک', icon: 'fa-traffic-light' },
-  { id: 'waste', label: 'زباله', icon: 'fa-trash' },
-  { id: 'water', label: 'آب و فاضلاب', icon: 'fa-droplet' },
-  { id: 'permits', label: 'مجوزها', icon: 'fa-file-signature' },
-  { id: 'reports', label: 'گزارش‌ها', icon: 'fa-file-lines' },
-  { id: 'settings', label: 'تنظیمات', icon: 'fa-gear' },
+  { id: 'dashboard', label: 'پیشخوان', icon: 'fa-gauge-high', section: 'اصلی' },
+  { id: 'projects', label: 'پروژه‌ها', icon: 'fa-hard-hat', section: 'اصلی' },
+  { id: 'budget', label: 'بودجه', icon: 'fa-coins', section: 'اصلی' },
+  { id: 'personnel', label: 'پرسنل', icon: 'fa-users', section: 'اصلی' },
+  { id: 'services', label: 'خدمات شهری', icon: 'fa-city', section: 'اصلی' },
+  { id: 'complaints', label: 'شکایات', icon: 'fa-comment-dots', section: 'اصلی' },
+  { id: 'traffic', label: 'ترافیک', icon: 'fa-traffic-light', section: 'اصلی' },
+  { id: 'waste', label: 'زباله', icon: 'fa-trash', section: 'اصلی' },
+  { id: 'water', label: 'آب و فاضلاب', icon: 'fa-droplet', section: 'اصلی' },
+  { id: 'permits', label: 'مجوزها', icon: 'fa-file-signature', section: 'اصلی' },
+  { id: 'reports', label: 'گزارش‌ها', icon: 'fa-file-lines', section: 'اصلی' },
+  { id: 'settings', label: 'تنظیمات', icon: 'fa-gear', section: 'اصلی' },
+  { id: 'traffic-prediction', label: 'پیش‌بینی ترافیک', icon: 'fa-brain', section: 'فاز ۱' },
+  { id: 'iot', label: 'داشبورد IoT', icon: 'fa-microchip', section: 'فاز ۱' },
+  { id: 'ai-assistant', label: 'دستیار هوشمند', icon: 'fa-robot', section: 'فاز ۲' },
+  { id: 'digital-twin', label: 'دیجیتال توین', icon: 'fa-cube', section: 'فاز ۳' },
+  { id: 'blockchain', label: 'بلاکچین', icon: 'fa-link', section: 'فاز ۴' },
+  { id: 'crisis', label: 'مدیریت بحران', icon: 'fa-triangle-exclamation', section: 'فاز ۴' },
+  { id: 'smart-transport', label: 'حمل‌ونقل هوشمند', icon: 'fa-bus', section: 'فاز ۴' },
+  { id: 'energy', label: 'مدیریت انرژی', icon: 'fa-bolt', section: 'فاز ۴' },
 ];
 
 export default function App() {
@@ -77,6 +93,14 @@ export default function App() {
       case 'permits': return <Permits />;
       case 'reports': return <Reports />;
       case 'settings': return <Settings darkMode={darkMode} setDarkMode={setDarkMode} />;
+      case 'traffic-prediction': return <TrafficPrediction />;
+      case 'iot': return <IoTDashboard />;
+      case 'ai-assistant': return <AIAssistant />;
+      case 'digital-twin': return <DigitalTwin />;
+      case 'blockchain': return <Blockchain />;
+      case 'crisis': return <CrisisManagement />;
+      case 'smart-transport': return <SmartTransport />;
+      case 'energy': return <EnergyManagement />;
       default: return <Dashboard />;
     }
   };
@@ -105,7 +129,9 @@ export default function App() {
 
         {/* آیتم‌های منو */}
         <nav className="p-3 space-y-1 overflow-y-auto h-[calc(100%-140px)] scrollbar-thin">
-          {menuItems.map(item => (
+          {/* بخش اصلی */}
+          <p className="text-xs text-white/40 px-4 py-2 font-bold">بخش اصلی</p>
+          {menuItems.filter(i => i.section === 'اصلی').map(item => (
             <button
               key={item.id}
               onClick={() => { setActivePage(item.id); setSidebarOpen(false); }}
@@ -115,6 +141,22 @@ export default function App() {
             >
               <i className={`fa-solid ${item.icon} w-5 text-center ${activePage === item.id ? 'text-gold' : ''}`}></i>
               <span>{item.label}</span>
+            </button>
+          ))}
+
+          {/* فازهای پیشرفته */}
+          <p className="text-xs text-white/40 px-4 py-2 font-bold mt-4">فازهای پیشرفته</p>
+          {menuItems.filter(i => i.section !== 'اصلی').map(item => (
+            <button
+              key={item.id}
+              onClick={() => { setActivePage(item.id); setSidebarOpen(false); }}
+              className={`sidebar-item w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-right ${
+                activePage === item.id ? 'sidebar-active' : 'text-white/80 hover:text-white'
+              }`}
+            >
+              <i className={`fa-solid ${item.icon} w-5 text-center ${activePage === item.id ? 'text-gold' : ''}`}></i>
+              <span>{item.label}</span>
+              <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/10 text-white/60 mr-auto">{item.section}</span>
             </button>
           ))}
         </nav>
