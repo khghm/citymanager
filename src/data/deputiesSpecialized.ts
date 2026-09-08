@@ -227,7 +227,7 @@ export const legalDept = {
 export const adminDept = {
   manager: 'مهندس نرگس موسوی',
   budget: 200,
-  overallPerformance: 86,
+  performance: 86,
   employees: [
     { id: 1, name: 'علی محمدی', position: 'مهندس عمران', dept: 'عمران', type: 'رسمی', hireDate: '1385/03/15', salary: 25 },
     { id: 2, name: 'فاطمه احمدی', position: 'حسابدار', dept: 'مالی', type: 'رسمی', hireDate: '1388/06/20', salary: 22 },
@@ -245,7 +245,7 @@ export const adminDept = {
     { id: 2, course: 'ایمنی و بهداشت', participants: 50, duration: '۲۰ ساعت', satisfaction: 85 },
     { id: 3, course: 'فناوری‌های نوین شهری', participants: 30, duration: '۳۰ ساعت', satisfaction: 90 },
   ],
-  performance: [
+  performanceEvaluations: [
     { id: 1, employee: 'علی محمدی', score: 85, period: 'سه‌ماهه سوم', bonus: 5 },
     { id: 2, employee: 'فاطمه احمدی', score: 92, period: 'سه‌ماهه سوم', bonus: 8 },
     { id: 3, employee: 'مریم حسینی', score: 88, period: 'سه‌ماهه سوم', bonus: 6 },
